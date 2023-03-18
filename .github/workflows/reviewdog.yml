@@ -45,5 +45,5 @@ jobs:
         env:
           REVIEWDOG_GITHUB_API_TOKEN: ${{ secrets.github_token }}
         run: |
-          mypy . | reviewdog -efm="%f:%l:%c: %m" -reporter=github-pr-review -fail_on_error=true
+          mypy . | reviewdog -efm="%f:%l:%c: %m" -reporter=github-pr-review -fail-on-error=true
         working-directory: ${{ matrix.workdir }}
