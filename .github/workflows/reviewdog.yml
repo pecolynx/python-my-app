@@ -42,10 +42,10 @@ jobs:
       #     reporter: github-pr-review
       #     fail_on_error: true
       #     workdir: ${{ matrix.workdir }}
-      - name: mypy
-        run: |
-          mypy .
-        working-directory: ${{ matrix.workdir }}
+      # - name: mypy
+      #   run: |
+      #     mypy .
+      #   working-directory: ${{ matrix.workdir }}
 
       - name: mypy
         env:
