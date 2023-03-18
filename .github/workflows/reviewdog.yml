@@ -35,18 +35,14 @@ jobs:
           filter_mode: nofilter
           workdir: ${{ matrix.workdir }}
 
-      # - name: mypy
-      #   uses: tsuyoshicho/action-mypy@v3
-      #   with:
-      #     setup_command: "pip install mypy==1.1.1"
-      #     github_token: ${{ secrets.github_token }}
-      #     reporter: github-pr-review
-      #     fail_on_error: true
-      #     workdir: ${{ matrix.workdir }}
-      # - name: mypy
-      #   run: |
-      #     mypy .
-      #   working-directory: ${{ matrix.workdir }}
+      - name: flake8
+        uses: reviewdog/action-flake8@v3
+        with:
+          github_token: ${{ secrets.github_token }}
+          reporter: github-pr-review
+          fail_on_error: true
+          filter_mode: nofilter
+          workdir: ${{ matrix.workdir }}
 
       - name: mypy
         env:
